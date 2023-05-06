@@ -7,11 +7,11 @@ firebase_admin.initialize_app(creds, {
   'projectId': 'minioncheck',
 })
 
-dbase = firestore.client()
+db = firestore.client()
 def Call_Minis(request):
     minrequest = request.args
 
-    minref = dbase.collection("MinTable")
+    minref = db.collection("MinTable")
     minis = minref.get()
     
     list_of_minis = []
